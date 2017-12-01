@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lt">
 <head>
     <meta charset="UTF-8">
     <title>Parlamento Studijos</title>
@@ -14,10 +14,10 @@
 <nav>
     <ul id="menu">
       <li class="button">
-        <a href="#"> Option 1 </a>
+        <a href="./index.php"> Pagrindinis </a>
       </li>
       <li class="button">
-        <a href="#"> Option 2 </a>
+        <a href="./admin-page.php"> Admin </a>
      </li>
       <li class="button">
         <a href="#"> Option 3 </a>
@@ -30,19 +30,3 @@
       </li>
     </ul>
 </nav>
-    
-<main>
-   <section>
-   <h3>Straipsniai</h3>
-   <ul>
-       <li>
-           
-       </li>
-   </ul>
-   </section>
-   
-    
-</main>
-
-</body>
-</html>
