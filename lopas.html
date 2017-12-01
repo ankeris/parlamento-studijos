@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+                <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in exordium">
+                {{index}}<h3>{{data.author}}</h3><h4>{{data.title}}</h4>
+                <label>Autorius (vardas, pavardė)</label><br>
+                <input type="text" id="name" name="author_name[]" class="form-input" v-model="data.author">
+                <br>
+
+                <label>Straipsnio pavadinimas:</label><br>
+                <textarea name="article_name[]" class="form-input" v-model="data.title"></textarea>
+                <br>
+                
+                <label>PDF:</label>
+                <input type="file" name="pdf_file[]" class="form-input">
+                <!-- hidden value to identify topic -->
+                <input type="hidden" name="topic[]" class="form-input" value="izanga">
+                
+                <button id="exordium" type="button" class="removeBtn" onClick="reply_click(this.id)">Trinti</button>
+            </section>
+            
+<button id="1" onClick="reply_click(this.id)">B1</button>
+<button id="2" onClick="reply_click(this.id)">B2</button>
+<button id="3" onClick="reply_click(this.id)">B3</button>
+
+<script type="text/javascript">
+function reply_click(clicked_id)
+{
+    alert(clicked_id);
+}
+</script>
+
+</body>
+</html>
