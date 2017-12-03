@@ -3,22 +3,26 @@
 
 
     <h4>Pridėti straipsnį</h4>
+
 <div id="app">
 
-    <form action="php/add_article.php" method="post" style="border: 1px solid black; margin: 10px;">
+    <form action="php/add_article.php" method="POST" enctype="multipart/form-data" style="border: 1px solid black; margin: 10px;">
         Viršelio iliustracija:
-        <input type="file" name="upload" value="įkelti">
-        <br>
+        <input type="hidden" name="size" value="1000000">
+        <input type="file" name="image">
+        
+        <br><br>
         
         
         Įžanga:
             <button type="button" id="addBtn-izanga" @click="addNewArticleForm_exordium">+</button>
             <br>
         
-            <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in exordium">
+            <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.exordium">
                 {{index}}<h3>{{data.author}}</h3><h4>{{data.title}}</h4>
                 <label>Autorius (vardas, pavardė)</label><br>
-                <input type="text" id="name" name="author_name[]" class="form-input" v-model="data.author">
+                <input type="text" id="name" name="author_name[]" class="form-input"
+                v-model="data.author">
                 <br>
 
                 <label>Straipsnio pavadinimas:</label><br>
@@ -26,7 +30,7 @@
                 <br>
                 
                 <label>PDF:</label>
-                <input type="file" name="pdf_file[]" class="form-input">
+                <input type="text" name="pdf_file[]" class="form-input">
                 <!-- hidden value to identify topic -->
                 <input type="hidden" name="topic[]" class="form-input" value="izanga">
                 
@@ -39,7 +43,7 @@
             <button type="button" id="addBtn-izanga" @click="addNewArticleForm_history">+</button>
             <br>
 
-            <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in history">
+            <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.history">
 
                     {{index}}<h3>{{data.author}}</h3><h4>{{data.title}}</h4>
                     <label>Autorius (vardas, pavardė)</label><br>
@@ -51,7 +55,7 @@
                     <br>
 
                     <label>PDF:</label>
-                    <input type="file" name="pdf_file[]" class="form-input">
+                    <input type="text" name="pdf_file[]" class="form-input">
                     <!-- hidden value to identify topic -->
                     <input type="hidden" name="topic[]" class="form-input" value="istorija">
 
@@ -64,7 +68,7 @@
         <button type="button" id="addBtn-izanga" @click="addNewArticleForm_politics">+</button>
         <br>
            
-        <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in politics">
+        <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.politics">
 
                 {{index}}<h3>{{data.author}}</h3><h4>{{data.title}}</h4>
                 <label>Autorius (vardas, pavardė)</label><br>
@@ -90,7 +94,7 @@
         <button type="button" id="addBtn-izanga" @click="addNewArticleForm_law">+</button>
         <br>
            
-        <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in law">
+        <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.law">
 
                 {{index}}<h3>{{data.author}}</h3><h4>{{data.title}}</h4>
                 <label>Autorius (vardas, pavardė)</label><br>
@@ -115,7 +119,7 @@
         <button type="button" id="addBtn-izanga" @click="addNewArticleForm_language">+</button>
         <br>
            
-        <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in language">
+        <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.language">
 
                 {{index}}<h3>{{data.author}}</h3><h4>{{data.title}}</h4>
                 <label>Autorius (vardas, pavardė)</label><br>
@@ -140,7 +144,7 @@
         <button type="button" id="addBtn-izanga" @click="addNewArticleForm_communication">+</button>
         <br>
            
-        <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in communication">
+        <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.communication">
 
                 {{index}}<h3>{{data.author}}</h3><h4>{{data.title}}</h4>
                 <label>Autorius (vardas, pavardė)</label><br>
@@ -165,7 +169,7 @@
         <button type="button" id="addBtn-izanga" @click="addNewArticleForm_reviews">+</button>
         <br>
            
-        <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in reviews">
+        <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.reviews">
 
                 {{index}}<h3>{{data.author}}</h3><h4>{{data.title}}</h4>
                 <label>Autorius (vardas, pavardė)</label><br>
@@ -190,7 +194,7 @@
         <button type="button" id="addBtn-izanga" @click="addNewArticleForm_comments">+</button>
         <br>
            
-        <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in comments">
+        <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.comments">
 
                 {{index}}<h3>{{data.author}}</h3><h4>{{data.title}}</h4>
                 <label>Autorius (vardas, pavardė)</label><br>
@@ -216,7 +220,7 @@
         <button type="button" id="addBtn-izanga" @click="addNewArticleForm_bibliography">+</button>
         <br>
            
-        <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in bibliography">
+        <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.bibliography">
 
                 {{index}}<h3>{{data.author}}</h3><h4>{{data.title}}</h4>
                 <label>Autorius (vardas, pavardė)</label><br>
@@ -242,7 +246,7 @@
         <button type="button" id="addBtn-izanga" @click="addNewArticleForm_calender">+</button>
         <br>
            
-        <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in calender">
+        <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.calender">
 
                 {{index}}<h3>{{data.author}}</h3><h4>{{data.title}}</h4>
                 <label>Autorius (vardas, pavardė)</label><br>
@@ -268,7 +272,7 @@
         <button type="button" id="addBtn-izanga" @click="addNewArticleForm_it">+</button>
         <br>
            
-        <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in it">
+        <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.it">
 
                 {{index}}<h3>{{data.author}}</h3><h4>{{data.title}}</h4>
                 <label>Autorius (vardas, pavardė)</label><br>
@@ -289,14 +293,77 @@
         </section>
         <br>
         
-        <button type="submit">Publikuoti</button>
+        <!--  <input type="hidden" name="publication_number" value="">  -->
+        
+        <button type="submit" name="upload">Publikuoti</button>
+        
     </form>
+                <h2>Peržiūra</h2>
+                <!--    Loop inside loop        -->
+                <p>Įžangoje:</p>
+                <section id="preview" v-for="detail in articles.exordium">
+                {{detail.author}} - 
+                {{detail.title}}
+                </section>
                 
+                <p>Istorija:</p>
+                <section id="preview" v-for="detail in articles.history">
+                {{detail.author}}
+                {{detail.title}}
+                </section>
                 
-                <section id="preview" v-for="(data, index) in data">
-                    <div>{{exordium.name}}</div>
-                    
-                     
+                <p>Politika:</p>
+                <section id="preview" v-for="detail in articles.politics">
+                {{detail.author}}
+                {{detail.title}}
+                </section>
+                
+                <p>Teisė:</p>
+                <section id="preview" v-for="detail in articles.law">
+                {{detail.author}}
+                {{detail.title}}
+                </section>
+                
+                <p>Kalba:</p>
+                <section id="preview" v-for="detail in articles.language">
+                {{detail.author}}
+                {{detail.title}}
+                </section>
+                
+                <p>Komunikacija:</p>
+                <section id="preview" v-for="detail in articles.communication">
+                {{detail.author}}
+                {{detail.title}}
+                </section>
+                
+                <p>Recenzijos ir vertinimai:</p>
+                <section id="preview" v-for="detail in articles.reviews">
+                {{detail.author}}
+                {{detail.title}}
+                </section>
+                
+                <p>Komentarai:</p>
+                <section id="preview" v-for="detail in articles.comments">
+                {{detail.author}}
+                {{detail.title}}
+                </section>
+                
+                <p>Bibliografija:</p>
+                <section id="preview" v-for="detail in articles.bibliography">
+                {{detail.author}}
+                {{detail.title}}
+                </section>
+                
+                <p>Įvykių kalendorius:</p>
+                <section id="preview" v-for="detail in articles.calender">
+                {{detail.author}}
+                {{detail.title}}
+                </section>
+                
+                <p>Informacinės technologijos:</p>
+                <section id="preview" v-for="detail in articles.it">
+                {{detail.author}}
+                {{detail.title}}
                 </section>
 </div>
 
@@ -311,7 +378,8 @@
 const app = new Vue({
     el: "#app",
     data: {
-        articles: [{
+        articles: {
+            
             exordium: [
 
             ],
@@ -346,130 +414,127 @@ const app = new Vue({
 
             ]
         }
-
-        ]
-
     },
     methods: {
         addNewArticleForm_exordium () {
             this.articles.exordium.push({
-                name: '',
+                author: '',
                 title: '',
                 show: true
             })
         },
         addNewArticleForm_history () {
             this.articles.history.push({
-                name: '',
+                author: '',
                 title: '',
                 show: true
             })
         },
         addNewArticleForm_politics () {
             this.articles.politics.push({
-                name: '',
+                author: '',
                 title: '',
                 show: true
             })
         },
         addNewArticleForm_law () {
             this.articles.law.push({
-                name: '',
+                author: '',
                 title: '',
                 show: true
             })
         },
         addNewArticleForm_language () {
             this.articles.language.push({
-                name: '',
+                author: '',
                 title: '',
                 show: true
             })
         },
         addNewArticleForm_communication () {
             this.articles.communication.push({
-                name: '',
+                author: '',
                 title: '',
                 show: true
             })
         },
         addNewArticleForm_reviews () {
             this.articles.reviews.push({
-                name: '',
+                author: '',
                 title: '',
                 show: true
             })
         },
         addNewArticleForm_comments () {
             this.articles.comments.push({
-                name: '',
+                author: '',
                 title: '',
                 show: true
             })
         },
         addNewArticleForm_bibliography () {
             this.articles.bibliography.push({
-                name: '',
+                author: '',
                 title: '',
                 show: true
             })
         },
         addNewArticleForm_calender () {
             this.articles.calender.push({
-                name: '',
+                author: '',
                 title: '',
                 show: true
             })
         },
         addNewArticleForm_it () {
             this.articles.it.push({
-                name: '',
+                author: '',
                 title: '',
                 show: true
             })
         },
         removeForm_exordium (data) {
-           this.exordium.splice(this.exordium.indexOf(data), 1)
+           this.articles.exordium.splice(this.articles.exordium.indexOf(data), 1)
             console.log(this.exordium.indexOf(data));
         },
         removeForm_history (data) {
-           this.history.splice(this.history.indexOf(data), 1)
+           this.articles.history.splice(this.articles.history.indexOf(data), 1)
             console.log(this.history.indexOf(data));
         },
         removeForm_politics (data) {
-           this.politics.splice(this.politics.indexOf(data), 1)
+           this.articles.politics.splice(this.articles.politics.indexOf(data), 1)
             console.log(this.politics.indexOf(data));
         },
         removeForm_law (data) {
-           this.law.splice(this.law.indexOf(data), 1)
+           this.articles.law.splice(this.articles.law.indexOf(data), 1)
             console.log(this.law.indexOf(data));
         },
         removeForm_language (data) {
-           this.language.splice(this.language.indexOf(data), 1)
+           this.articles.language.splice(this.articles.language.indexOf(data), 1)
             console.log(this.language.indexOf(data));
         },
         removeForm_communication (data) {
-           this.communication.splice(this.communication.indexOf(data), 1)
+           this.articles.communication.splice(this.articles.communication.indexOf(data), 1)
             console.log(this.communication.indexOf(data));
         },
         removeForm_reviews (data) {
-           this.reviews.splice(this.reviews.indexOf(data), 1)
+           this.articles.reviews.splice(this.articles.reviews.indexOf(data), 1)
             console.log(this.reviews.indexOf(data));
         },
         removeForm_comments (data) {
-           this.comments.splice(this.comments.indexOf(data), 1)
+           this.articles.comments.splice(this.articles.comments.indexOf(data), 1)
             console.log(this.comments.indexOf(data));
         },
         removeForm_bibliography (data) {
-           this.bibliography.splice(this.bibliography.indexOf(data), 1)
+           this.articles.bibliography.splice(this.articles.bibliography.indexOf(data), 1)
             console.log(this.bibliography.indexOf(data));
         },
         removeForm_calender (data) {
-           this.calender.splice(this.calender.indexOf(data), 1)
+           this.articles.calender.splice(this.articles.calender.indexOf(data), 1)
             console.log(this.calender.indexOf(data));
         },
         removeForm_it (data) {
-           this.it.splice(this.it.indexOf(data), 1)
+           this.articles.it.splice(this.articles.it.indexOf(data), 1)
             console.log(this.it.indexOf(data));
         },
     }
