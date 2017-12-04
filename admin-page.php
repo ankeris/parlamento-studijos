@@ -373,7 +373,6 @@
 <script src="https://unpkg.com/vue"></script>
 <script>
     
-
     
 const app = new Vue({
     el: "#app",
@@ -381,37 +380,26 @@ const app = new Vue({
         articles: {
             
             exordium: [
-
             ],
             history: [
-
             ],
             politics: [
-
             ],
             law: [
-
             ],
             language: [
-
             ],
             communication: [
-
             ],
             reviews: [
-
             ],
             comments: [
-
             ],
             bibliography: [
-
             ],
             calender: [
-
             ],
             it: [
-
             ]
         }
     },
@@ -539,8 +527,6 @@ const app = new Vue({
         },
     }
 })
-
-
 </script>
 
 
