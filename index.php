@@ -17,7 +17,7 @@ var_dump($publications);
             foreach ($publications as $publication) {
             ?>
             <li>
-                <img src="img/covers/<?php echo $publication['image']?>" alt="" style="width: 100px; height: 100px;">
+                <img src="media/covers/<?php echo $publication['image']?>" alt="" style="width: 100px; height: 100px;">
                 <br>
                 <h3>Leidinys Nr: <?php echo $publication['number'] ?></h3>
             </li>

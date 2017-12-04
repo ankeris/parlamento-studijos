@@ -30,7 +30,7 @@
                 <br>
                 
                 <label>PDF:</label>
-                <input type="text" name="pdf_file[]" class="form-input">
+                <input type="file" name="pdf_file[]" class="form-input">
                 <!-- hidden value to identify topic -->
                 <input type="hidden" name="topic[]" class="form-input" value="izanga">
                 
@@ -55,7 +55,7 @@
                     <br>
 
                     <label>PDF:</label>
-                    <input type="text" name="pdf_file[]" class="form-input">
+                    <input type="file" name="pdf_file[]" class="form-input">
                     <!-- hidden value to identify topic -->
                     <input type="hidden" name="topic[]" class="form-input" value="istorija">
 

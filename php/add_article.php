@@ -24,7 +24,7 @@ $highestnumber = $number["number"];
 $highestnumber += 1;
 
 // print_r($highestnumber);
-$target = "../img/covers/".basename($_FILES['image']['name']);
+$target = "../media/covers/".basename($_FILES['image']['name']);
 
 $image = $_FILES['image']['name'];
 
@@ -44,10 +44,14 @@ $nm->execute($values);
 $sql = "INSERT INTO articles (name, author, pdf_url, topic, publication)
 VALUES (?,?,?,?,?)";
 
+//$pdf_target = "../media/pdfs/".basename($_FILES['pdf_file']['name']);
+
+$pdf = $_FILES['pdf_file']['name'];
+
 $stmt = $conn->prepare($sql);
 $stmt->bindParam(1, $name);
 $stmt->bindParam(2, $author);
-$stmt->bindParam(3, $pdf);
+$stmt->bindParam(3, $pdf_url);
 $stmt->bindParam(4, $topic);
 $stmt->bindParam(5, $highestnumber);
 
@@ -56,7 +60,7 @@ $arr = $_POST;
 for ($i = 0; $i <= count($arr['article_name'])-1; $i++) {
     $name = $arr['article_name'][$i];
     $author = $arr['author_name'][$i];
-    $pdf = $arr['pdf_file'][$i];
+    $pdf_url = $pdf[$i];
     $topic = $arr['topic'][$i];
     $stmt->execute();
 }
