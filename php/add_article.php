@@ -1,6 +1,5 @@
 <?php include '../includes/pdo-conn.php' ?>
 
-
 <?php 
 var_dump($_POST);
 
@@ -19,16 +18,26 @@ $highestnumber += 1;
 
 // print_r($highestnumber);
 $target = "../media/covers/".basename($_FILES['image']['name']);
+$pdf_target = "../media/pdfs/".basename($_FILES['pdf_file']['name'][0]);
 
-$image = $_FILES['image']['name'];
-        if (isset($_POST["upload"])) {
-            if(move_uploaded_file($_FILES['image']['tmp_name'], $target)){
-                $msg = "image uploaded";
-            }  else {
-                $msg = "There was a problem uploading image";
+
+
+foreach($pdf as $idx){
+            if (isset($_POST["upload"])) {
+                if(move_uploaded_file($_FILES['image']['tmp_name'], $target) && move_uploaded_file($_FILES['pdf_file']['tmp_name'][$idx], $pdf_target)){
+                    $msg = "image uploaded";
+                }  else {
+                    $msg = "There was a problem uploading image";
+                }
             }
         }
 
+print_r($pdf_target);
+
+$image = $_FILES['image']['name'];
+$pdf = $_FILES['pdf_file']['name'];
+
+print_r($msg);
 
 $sql_publication = "INSERT INTO publications (number, image) VALUES (?,?)";
 
@@ -41,13 +50,10 @@ $nm->execute($values);
 $sql = "INSERT INTO articles (name, author, pdf_url, topic, publication)
 VALUES (?,?,?,?,?)";
 
-$pdf_target = "../media/pdfs/".basename($_FILES['pdf_file']['name'][0]);
 
 print_r($target);
-print_r($pdf_target);
 
 
-$pdf = $_FILES['pdf_file']['name'];
 
 $stmt = $conn->prepare($sql);
 $stmt->bindParam(1, $name);
