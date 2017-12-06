@@ -539,26 +539,3 @@ const app = new Vue({
         this.targetId.splice(this.targetId.indexOf(data), 1);
        }
 -->
-
-
-
-
-
-
-
-
-
-
-<!--
-<script src="node_modules/jquery/dist/jquery.min.js"></script>
-<script src="node_modules/jquery/dist/jquery.multifield.min.js"></script>
--->
-<!--
-<script>
-$('.izanga').multifield({
-	section: '.form-content',
-	btnAdd:'#addBtn',
-	btnRemove:'.removeBtn',
-});
-    
-</script>-->
