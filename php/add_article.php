@@ -20,8 +20,10 @@ $highestnumber += 1;
 $target = "../media/covers/".basename($_FILES['image']['name']);
 $pdf_target = "../media/pdfs/".basename($_FILES['pdf_file']['name'][0]);
 
+$image = $_FILES['image']['name'];
+$pdf = $_FILES['pdf_file']['name'];
 
-
+// looping thru array of pdf files from HTML input
 foreach($pdf as $idx){
             if (isset($_POST["upload"])) {
                 if(move_uploaded_file($_FILES['image']['tmp_name'], $target) && move_uploaded_file($_FILES['pdf_file']['tmp_name'][$idx], $pdf_target)){
@@ -34,8 +36,7 @@ foreach($pdf as $idx){
 
 print_r($pdf_target);
 
-$image = $_FILES['image']['name'];
-$pdf = $_FILES['pdf_file']['name'];
+
 
 print_r($msg);
 
