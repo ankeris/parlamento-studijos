@@ -1,0 +1,5 @@
+Options +Indexes
+IndexOptions FancyIndexing
+
+//can set what is the index page @ start
+DirectoryIndex index.php

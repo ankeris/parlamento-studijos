@@ -18,26 +18,37 @@ $highestnumber += 1;
 
 // print_r($highestnumber);
 $target = "../media/covers/".basename($_FILES['image']['name']);
-$pdf_target = "../media/pdfs/".basename($_FILES['pdf_file']['name'][0]);
 
+$pdf_dir = "../media/pdfs";
+    
 $image = $_FILES['image']['name'];
 $pdf = $_FILES['pdf_file']['name'];
 
-// looping thru array of pdf files from HTML input
-foreach($pdf as $idx){
+$pdf_length = count($pdf);
+
+//foreach ($pdf as $idx) 
+// looping thru array of pdf files from HTML input\
+for ($idx = 0; $idx < $pdf_length; $idx++) {
             if (isset($_POST["upload"])) {
-                if(move_uploaded_file($_FILES['image']['tmp_name'], $target) && move_uploaded_file($_FILES['pdf_file']['tmp_name'][$idx], $pdf_target)){
+                
+                $pdf_target = basename($_FILES['pdf_file']['name'][$idx]);
+                $pdf_tmp = $_FILES['pdf_file']['tmp_name'][$idx];
+                
+                if(move_uploaded_file($_FILES['image']['tmp_name'], $target) && move_uploaded_file($pdf_tmp, "$pdf_dir/$pdf_target")){
                     $msg = "image uploaded";
                 }  else {
                     $msg = "There was a problem uploading image";
                 }
+                echo $pdf_target."<br>";
+                echo "$pdf_dir/$pdf_target"."<br>";
             }
+            move_uploaded_file($pdf_tmp, "$pdf_dir/$pdf_target");
         }
 
-print_r($pdf_target);
-
-
-
+echo $pdf_length;
+echo "<br>";
+print_r($pdf);
+echo "<br>";
 print_r($msg);
 
 $sql_publication = "INSERT INTO publications (number, image) VALUES (?,?)";

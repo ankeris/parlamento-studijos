@@ -526,16 +526,11 @@ const app = new Vue({
             console.log(this.it.indexOf(data));
         },
     }
-})
+}) 
+
+
 </script>
 
 
-<!--
-        removeForm (event, data) {
-        let targetId = event.currentTarget.id;
-        let target = window[targetId];         
-        console.log(target);
-          
-        this.targetId.splice(this.targetId.indexOf(data), 1);
-       }
--->
+
+       

@@ -23,7 +23,6 @@ $publications = $sth->fetchAll();
                 <a href=""><h3>Leidinys Nr: <?php echo $publication['number'] ?></h3></a>
             </li>
            
-
             <?php
             }
             ?>
