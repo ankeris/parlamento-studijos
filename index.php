@@ -16,19 +16,19 @@ $publications = $sth->fetchAll();
             <?php
             foreach ($publications as $publication) {
             ?>
-            
-            <li>
-                <img src="media/covers/<?php echo $publication['image']?>" alt="" style="width: 100px; height: 100px;">
-                <br>
-                <a href=""><h3>Leidinys Nr: <?php echo $publication['number'] ?></h3></a>
-            </li>
-           
-            <?php
-            }
-            ?>
+               
+                    <li>
+                        <a href="publication.php?publicationindex=<?php echo $publication['number']?>">
+                            <section>
+                            <img src="media/covers/<?php echo $publication['image']?>" alt="" style="width: 100px; height: 100px;">
+
+                            <p>Leidinys Nr: <?php echo $publication['number'] ?></p>
+                            </section>
+                        </a>
+                    </li>
+
+                
+            <?php } ?>
         </ul>
    </section>
 </main>
-
-</body>
-</html>

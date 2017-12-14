@@ -8,3 +8,31 @@
 body {
     background-color: $darkerwhite;
 }
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    ul{
+        width: 100%;
+        list-style: none;
+        padding: 0;
+        section{
+            padding: 10px;
+            }
+        }
+    a{
+        text-decoration: none;
+    }
+    }
+    li{
+        display: inline-block;
+        margin: 2%;
+        background-color: white;
+        border-radius: 3px;
+        box-shadow:0 0 8px rgba(0, 0, 0, 0.06);
+        transition-duration: 90ms;
+        &:hover{
+            transform: scale(1.05);
+            transition-duration: 90ms;
+        }
+    }

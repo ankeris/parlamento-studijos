@@ -1,5 +1,5 @@
-Options +Indexes
-IndexOptions FancyIndexing
+RewriteEngine On
+    
+RewriteRule ^pagrindinis$ index.php [L]
 
-//can set what is the index page @ start
-DirectoryIndex index.php
+RewriteRule ^publication/([0-9a-zA-Z]+)$ publication.php?publicationindex=$1 [NC,L]

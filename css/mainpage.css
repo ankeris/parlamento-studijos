@@ -34,4 +34,28 @@
 body {
   background-color: #F3F3F3; }
 
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center; }
+  main ul {
+    width: 100%;
+    list-style: none;
+    padding: 0; }
+    main ul section {
+      padding: 10px; }
+  main a {
+    text-decoration: none; }
+
+li {
+  display: inline-block;
+  margin: 2%;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.06);
+  transition-duration: 90ms; }
+  li:hover {
+    transform: scale(1.05);
+    transition-duration: 90ms; }
+
 /*# sourceMappingURL=mainpage.css.map */
