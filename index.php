@@ -10,13 +10,12 @@ $publications = $sth->fetchAll();
 ?>
 
 
-    <section>
-    <h3>Straipsniai</h3>
-        <ul id="publication_list">
+<section>
+       <h3>Straipsniai</h3>
+           <ul id="publication_list">
             <?php
             foreach ($publications as $publication) {
             ?>
-               
                     <li>
                         <a href="publication.php?publicationindex=<?php echo $publication['number']?>">
                             <section>
@@ -26,9 +25,16 @@ $publications = $sth->fetchAll();
                             </section>
                         </a>
                     </li>
-
-                
             <?php } ?>
-        </ul>
-   </section>
+            </ul>
+            <button>Rodyti daugiau</button>
+</section>
+   
+<section>
+    <h3>Paskutiniame leidinyje</h3>
+</section>
+
+<section>
+    <h3>Apie žurnalą</h3>
+</section>
 </main>
