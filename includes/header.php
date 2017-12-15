@@ -9,25 +9,26 @@
 </head>
 
 <body>
+<h1 style="width: 100%; text-align:center;">Parlamento studijos</h1>
 
-<h1>Parlamento studijos</h1>
 
-<nav>
-    <ul id="menu">
-      <li class="button">
-        <a href="/parlamento-studijos/index.php"> Pagrindinis </a>
-      </li>
-      <li class="button">
-        <a href="/parlamento-studijos/admin-page.php"> Admin </a>
-     </li>
-      <li class="button">
-        <a href="#"> Option 3 </a>
-      </li>
-      <li class="button selected">
-        <a href="#"> Option 4 </a>
-      </li>
-      <li class="button">
-        <a href="#"> Option 5 </a>
-      </li>
-    </ul>
-</nav>
+<main>
+    <nav>
+        <ul id="menu">
+          <li class="button">
+            <a href="/parlamento-studijos/index.php"> Pagrindinis </a>
+          </li>
+          <li class="button">
+            <a href="/parlamento-studijos/admin-page.php"> Admin </a>
+         </li>
+          <li class="button">
+            <a href="/parlamento-studijos/loginpage.php"> Login </a>
+          </li>
+          <li class="button selected">
+            <a href="#"> Option 4 </a>
+          </li>
+          <li class="button">
+            <a href="#"> Option 5 </a>
+          </li>
+        </ul>
+    </nav>

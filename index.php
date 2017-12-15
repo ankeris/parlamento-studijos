@@ -2,17 +2,17 @@
 <?php include 'includes/pdo-conn.php' ?>
 <?php 
     
-$sth = $conn->prepare("SELECT * FROM publications");
+$sth = $conn->prepare("SELECT * FROM publications ORDER BY number DESC LIMIT 4");
 $sth->execute();
 $publications = $sth->fetchAll();
 
 
 ?>
 
-<main>
+
     <section>
     <h3>Straipsniai</h3>
-        <ul>
+        <ul id="publication_list">
             <?php
             foreach ($publications as $publication) {
             ?>
@@ -20,7 +20,7 @@ $publications = $sth->fetchAll();
                     <li>
                         <a href="publication.php?publicationindex=<?php echo $publication['number']?>">
                             <section>
-                            <img src="media/covers/<?php echo $publication['image']?>" alt="" style="width: 100px; height: 100px;">
+                            <img src="media/covers/<?php echo $publication['image']?>" alt="" >
 
                             <p>Leidinys Nr: <?php echo $publication['number'] ?></p>
                             </section>

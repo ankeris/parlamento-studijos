@@ -4,15 +4,25 @@
 // adding navigation
 @import "navigation";
 
+@import "login";
 
+*{
+ font-family: 'Palatino', sans-serif;
+}
 body {
-    background-color: $darkerwhite;
+    background-color: $white;
+    background-image: url("../media/pics/pusis.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 main {
+    box-shadow:0 0 5px rgba(0, 0, 0, 0.3);
+    background-color: $darkerwhite;
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
-    ul{
+    #publication_list{
         width: 100%;
         list-style: none;
         padding: 0;
@@ -22,17 +32,26 @@ main {
         }
     a{
         text-decoration: none;
+        img{
+            width: 110px;
+            height: 140px;
+            border: 1px solid $darkerwhite;
+            box-shadow:0 0 5px rgba(0, 0, 0, 0.2);
+            border-radius: 3px;
+        }
     }
-    }
-    li{
+        li{
         display: inline-block;
         margin: 2%;
         background-color: white;
         border-radius: 3px;
-        box-shadow:0 0 8px rgba(0, 0, 0, 0.06);
+        box-shadow:0 0 8px rgba(0, 0, 0, 0.1);
         transition-duration: 90ms;
         &:hover{
-            transform: scale(1.05);
+            transform: scale(1.03);
             transition-duration: 90ms;
+            box-shadow:0 0 5px rgba(0, 0, 0, 0.5);
         }
     }
+    }
+
