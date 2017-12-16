@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2017 at 08:58 PM
+-- Generation Time: Dec 16, 2017 at 07:58 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -40,9 +40,25 @@ CREATE TABLE `articles` (
 --
 
 INSERT INTO `articles` (`name`, `author`, `id`, `publication`, `topic`, `pdf_url`) VALUES
-('autoriene', 'Autorinis autorius', 31, 1, 'izanga', ''),
-('straipsnis', 'Vardenis Pavardenis', 34, 2, 'izanga', ''),
-('dsafwadsadsa', 'Juozass rastenis', 35, 2, 'izanga', '');
+('', 'dar nera', 782, 1, 'izanga', ''),
+('', 'asd', 783, 2, 'izanga', ''),
+('', 'a', 785, 4, 'izanga', ''),
+('', 'a', 786, 5, 'izanga', ''),
+('', 'a', 787, 6, 'izanga', ''),
+('', 'a', 788, 7, 'izanga', ''),
+('', 'a', 789, 8, 'izanga', ''),
+('', 'a', 790, 9, 'izanga', ''),
+('', 'a', 791, 10, 'izanga', ''),
+('', 'a', 792, 11, 'izanga', ''),
+('', 'a', 793, 12, 'izanga', ''),
+('', 'a', 794, 13, 'izanga', ''),
+('', 'a', 795, 14, 'izanga', ''),
+('', 'a', 796, 15, 'izanga', ''),
+('', 'a', 797, 16, 'izanga', ''),
+('dsadasdsa', 'asdasd', 798, 17, 'izanga', '17_izanga.pdf'),
+('dasdas', 'dasfsad', 799, 17, 'istorija', '17_istorija_1.pdf'),
+('kalbetojas1', 'kalbininkas', 800, 17, 'kalba', '17_kalba_1.pdf'),
+('kalbininkautojas2', 'kalbinetojas', 801, 17, 'kalba', '17_kalba_2.pdf');
 
 -- --------------------------------------------------------
 
@@ -60,9 +76,23 @@ CREATE TABLE `publications` (
 --
 
 INSERT INTO `publications` (`number`, `image`) VALUES
-(1, '1.jpg'),
-(2, '6.jpg'),
-(3, '2.jpg');
+(1, 'studijos01.jpg'),
+(2, 'studijos02.jpg'),
+(3, ''),
+(4, 'studijos04.jpg'),
+(5, 'studijos05.jpg'),
+(6, 'studijos06.jpg'),
+(7, 'studijos07.jpg'),
+(8, 'studijos08.gif'),
+(9, 'studijos09.jpg'),
+(10, 'studijos10.jpg'),
+(11, 'studijos11.jpg'),
+(12, 'studijos12.jpg'),
+(13, 'studijos13.jpg'),
+(14, 'studijos14.jpg'),
+(15, 'studijos15.jpg'),
+(16, 'studijos16.jpg'),
+(17, 'studijos17.jpg');
 
 -- --------------------------------------------------------
 
@@ -123,7 +153,7 @@ ALTER TABLE `topics`
 -- AUTO_INCREMENT for table `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=604;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=802;
 --
 -- Constraints for dumped tables
 --
