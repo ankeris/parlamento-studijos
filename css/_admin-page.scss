@@ -1,3 +1,30 @@
 .removeBtn {
     background-color: $red;
 }
+#app {
+    background-color: $white;
+    border-radius: 3px;
+    box-shadow:0 0 8px rgba(0, 0, 0, 0.1);
+    form {
+        padding: 2%;
+        button{
+            float: right;
+        }
+        figure{
+            border-top: 1px solid $darkerwhite - 15;
+            margin-left: 0;
+            margin-right: 0;
+        }
+        section {
+            border-radius: 3px;
+            box-shadow:0 0 8px rgba(0, 0, 0, 0.1);
+            padding: 2%;
+        }
+        section:nth-child(even){
+            background-color: $darkerwhite;
+        }
+        section:nth-child(odd){
+            background-color: $darkerwhite - 15;
+        }
+    }
+}

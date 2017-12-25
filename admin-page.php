@@ -17,22 +17,22 @@
 
     <h4>Pridėti straipsnį</h4>
 
-<section id="app">
+<section id="app" class="content">
 
-    <form action="php/add_article.php" method="POST" enctype="multipart/form-data" style="border: 1px solid black; margin: 10px;">
+    <form action="php/add_article.php" method="POST" enctype="multipart/form-data">
         Viršelio iliustracija:
         <input type="hidden" name="size" value="1000000">
         <input type="file" name="image" class="button">
-        
         <br><br>
         
         
-        Įžanga:
+        <label>Įžanga:</label>
             <button type="button" id="addBtn-izanga" @click="addNewArticleForm_exordium">+</button>
             <br>
         
-            <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.exordium">
+            <section class="form-content"  v-for="(data, index) in articles.exordium">
                 {{index+1}}<br>
+                <label>Autorius (vardas, pavardė)</label><br>
                 <input type="text" id="name" name="author_name[]" class="form-input"
                 v-model="data.author">
                 <br>
@@ -48,14 +48,14 @@
                 
                 <button id="exordium" type="button" class="removeBtn" @click="removeForm_exordium(data)">Trinti</button>
             </section> 
-        <br>
-
         
-        Istorija:
+        <figure></figure>
+             
+        <label for="">Istorija:</label>
             <button type="button" id="addBtn-izanga" @click="addNewArticleForm_history">+</button>
             <br>
 
-            <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.history">
+            <section class="form-content"  v-for="(data, index) in articles.history">
                     {{index+1}}<br>
                     <label>Autorius (vardas, pavardė)</label><br>
                     <input type="text" id="name" name="author_name[]" class="form-input" v-model="data.author">
@@ -73,13 +73,13 @@
                     <button id="history" type="button" class="removeBtn" @click="removeForm_history(data)">Trinti</button>
 
             </section>
-        <br>
+        <figure></figure>
         
         Politika:
         <button type="button" id="addBtn-izanga" @click="addNewArticleForm_politics">+</button>
         <br>
            
-        <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.politics">
+        <section class="form-content"  v-for="(data, index) in articles.politics">
                 {{index+1}}<br>
                 <label>Autorius (vardas, pavardė)</label><br>
                 <input type="text" id="name" name="author_name[]" class="form-input" v-model="data.author">
@@ -98,13 +98,13 @@
                 <button id="politics" type="button" class="removeBtn" @click="removeForm_politics(data)">Trinti</button>
                 
         </section>
-        <br>
+        <figure></figure>
         
         Teisė:
         <button type="button" id="addBtn-izanga" @click="addNewArticleForm_law">+</button>
         <br>
            
-        <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.law">
+        <section class="form-content"  v-for="(data, index) in articles.law">
                 {{index+1}}<br>
                 <label>Autorius (vardas, pavardė)</label><br>
                 <input type="text" id="name" name="author_name[]" class="form-input" v-model="data.author">
@@ -122,13 +122,13 @@
                 <button id="law" type="button" class="removeBtn" @click="removeForm_law(data)">Trinti</button>
                 
         </section>
-        <br>
+        <figure></figure>
 
         Kalba:
         <button type="button" id="addBtn-izanga" @click="addNewArticleForm_language">+</button>
         <br>
            
-        <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.language">
+        <section class="form-content"  v-for="(data, index) in articles.language">
                 {{index+1}}<br>
                 <label>Autorius (vardas, pavardė)</label><br>
                 <input type="text" id="name" name="author_name[]" class="form-input" v-model="data.author">
@@ -146,13 +146,13 @@
                 <button id="language" type="button" class="removeBtn" @click="removeForm_language(data)">Trinti</button>
                 
         </section>
-        <br>
+        <figure></figure>
 
         Komunikacija:
         <button type="button" id="addBtn-izanga" @click="addNewArticleForm_communication">+</button>
         <br>
            
-        <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.communication">
+        <section class="form-content"  v-for="(data, index) in articles.communication">
                 {{index+1}}<br>
                 <label>Autorius (vardas, pavardė)</label><br>
                 <input type="text" id="name" name="author_name[]" class="form-input" v-model="data.author">
@@ -170,13 +170,13 @@
                 <button id="communication" type="button" class="removeBtn" @click="removeForm_communication(data)">Trinti</button>
                 
         </section>
-        <br>
+        <figure></figure>
 
         Recenzijos ir vertinimai:
         <button type="button" id="addBtn-izanga" @click="addNewArticleForm_reviews">+</button>
         <br>
            
-        <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.reviews">
+        <section class="form-content"  v-for="(data, index) in articles.reviews">
                 {{index+1}}<br>
                 <label>Autorius (vardas, pavardė)</label><br>
                 <input type="text" id="name" name="author_name[]" class="form-input" v-model="data.author">
@@ -194,13 +194,13 @@
                 <button id="reviews" type="button" class="removeBtn" @click="removeForm_reviews(data)">Trinti</button>
                 
         </section>
-        <br>
+        <figure></figure>
 
         Komentarai:
         <button type="button" id="addBtn-izanga" @click="addNewArticleForm_comments">+</button>
         <br>
            
-        <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.comments">
+        <section class="form-content"  v-for="(data, index) in articles.comments">
                 {{index+1}}<br>
                 <label>Autorius (vardas, pavardė)</label><br>
                 <input type="text" id="name" name="author_name[]" class="form-input" v-model="data.author">
@@ -219,13 +219,13 @@
                 <button id="comments" type="button" class="removeBtn" @click="removeForm_comments(data)">Trinti</button>
                 
         </section>
-        <br>
+        <figure></figure>
 
         Bibliografija:
         <button type="button" id="addBtn-izanga" @click="addNewArticleForm_bibliography">+</button>
         <br>
            
-        <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.bibliography">
+        <section class="form-content"  v-for="(data, index) in articles.bibliography">
 
                 {{index+1}}<br>
                 <label>Autorius (vardas, pavardė)</label><br>
@@ -245,13 +245,13 @@
                 <button id="bibliography" type="button" class="removeBtn" @click="removeForm_bibliography(data)">Trinti</button>
                 
         </section>
-        <br>
+        <figure></figure>
 
         Įvykių kalendorius:
         <button type="button" id="addBtn-izanga" @click="addNewArticleForm_calender">+</button>
         <br>
            
-        <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.calender">
+        <section class="form-content"  v-for="(data, index) in articles.calender">
 
                 {{index+1}}<br>
                 <label>Autorius (vardas, pavardė)</label><br>
@@ -271,13 +271,13 @@
                 <button id="calender" type="button" class="removeBtn" @click="removeForm_calender(data)">Trinti</button>
                 
         </section>
-        <br>
+        <figure></figure>
 
         Informacinės technologijos:
         <button type="button" id="addBtn-izanga" @click="addNewArticleForm_it">+</button>
         <br>
            
-        <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.it">
+        <section class="form-content"  v-for="(data, index) in articles.it">
 
                 {{index+1}}<br>
                 <label>Autorius (vardas, pavardė)</label><br>
