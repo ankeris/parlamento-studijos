@@ -1,15 +1,28 @@
 <?php include 'includes/header.php' ?>
 <?php include 'includes/pdo-conn.php' ?>
 
+    <h4>Patarimai</h4>
+    
+    
+<section class="content">
+    <ul style="text-align: left;">
+        <li>Neperkrauti/neišjūngti puslapio redagavimo metu, nes neišsaugos informacijos</li>
+        <li>Būtinai parinkti viršelio iliustraciją</li>
+        <li>Šio puslapio apačioje peržiūrėti žurnalą prieš publikuojant</li>
+        <li>Ištrinti pildymo sekciją, jeigu tuščia</li>
+    </ul> 
+</section>
+    
+
 
     <h4>Pridėti straipsnį</h4>
 
-<div id="app">
+<section id="app">
 
     <form action="php/add_article.php" method="POST" enctype="multipart/form-data" style="border: 1px solid black; margin: 10px;">
         Viršelio iliustracija:
         <input type="hidden" name="size" value="1000000">
-        <input type="file" name="image">
+        <input type="file" name="image" class="button">
         
         <br><br>
         
@@ -19,8 +32,7 @@
             <br>
         
             <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.exordium">
-                {{index}}<h3>{{data.author}}</h3><h4>{{data.title}}</h4>
-                <label>Autorius (vardas, pavardė)</label><br>
+                {{index+1}}<br>
                 <input type="text" id="name" name="author_name[]" class="form-input"
                 v-model="data.author">
                 <br>
@@ -44,8 +56,7 @@
             <br>
 
             <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.history">
-
-                    {{index}}<h3>{{data.author}}</h3><h4>{{data.title}}</h4>
+                    {{index+1}}<br>
                     <label>Autorius (vardas, pavardė)</label><br>
                     <input type="text" id="name" name="author_name[]" class="form-input" v-model="data.author">
                     <br>
@@ -69,8 +80,7 @@
         <br>
            
         <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.politics">
-
-                {{index}}<h3>{{data.author}}</h3><h4>{{data.title}}</h4>
+                {{index+1}}<br>
                 <label>Autorius (vardas, pavardė)</label><br>
                 <input type="text" id="name" name="author_name[]" class="form-input" v-model="data.author">
                 <br>
@@ -95,8 +105,7 @@
         <br>
            
         <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.law">
-
-                {{index}}<h3>{{data.author}}</h3><h4>{{data.title}}</h4>
+                {{index+1}}<br>
                 <label>Autorius (vardas, pavardė)</label><br>
                 <input type="text" id="name" name="author_name[]" class="form-input" v-model="data.author">
                 <br>
@@ -120,8 +129,7 @@
         <br>
            
         <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.language">
-
-                {{index}}<h3>{{data.author}}</h3><h4>{{data.title}}</h4>
+                {{index+1}}<br>
                 <label>Autorius (vardas, pavardė)</label><br>
                 <input type="text" id="name" name="author_name[]" class="form-input" v-model="data.author">
                 <br>
@@ -145,8 +153,7 @@
         <br>
            
         <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.communication">
-
-                {{index}}<h3>{{data.author}}</h3><h4>{{data.title}}</h4>
+                {{index+1}}<br>
                 <label>Autorius (vardas, pavardė)</label><br>
                 <input type="text" id="name" name="author_name[]" class="form-input" v-model="data.author">
                 <br>
@@ -170,8 +177,7 @@
         <br>
            
         <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.reviews">
-
-                {{index}}<h3>{{data.author}}</h3><h4>{{data.title}}</h4>
+                {{index+1}}<br>
                 <label>Autorius (vardas, pavardė)</label><br>
                 <input type="text" id="name" name="author_name[]" class="form-input" v-model="data.author">
                 <br>
@@ -195,8 +201,7 @@
         <br>
            
         <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.comments">
-
-                {{index}}<h3>{{data.author}}</h3><h4>{{data.title}}</h4>
+                {{index+1}}<br>
                 <label>Autorius (vardas, pavardė)</label><br>
                 <input type="text" id="name" name="author_name[]" class="form-input" v-model="data.author">
                 <br>
@@ -222,7 +227,7 @@
            
         <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.bibliography">
 
-                {{index}}<h3>{{data.author}}</h3><h4>{{data.title}}</h4>
+                {{index+1}}<br>
                 <label>Autorius (vardas, pavardė)</label><br>
                 <input type="text" id="name" name="author_name[]" class="form-input" v-model="data.author">
                 <br>
@@ -248,7 +253,7 @@
            
         <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.calender">
 
-                {{index}}<h3>{{data.author}}</h3><h4>{{data.title}}</h4>
+                {{index+1}}<br>
                 <label>Autorius (vardas, pavardė)</label><br>
                 <input type="text" id="name" name="author_name[]" class="form-input" v-model="data.author">
                 <br>
@@ -274,7 +279,7 @@
            
         <section class="form-content" style="border: 1px solid black; margin: 5px;" v-for="(data, index) in articles.it">
 
-                {{index}}<h3>{{data.author}}</h3><h4>{{data.title}}</h4>
+                {{index+1}}<br>
                 <label>Autorius (vardas, pavardė)</label><br>
                 <input type="text" id="name" name="author_name[]" class="form-input" v-model="data.author">
                 <br>
@@ -300,72 +305,74 @@
     </form>
                 <h2>Peržiūra</h2>
                 <!--    Loop inside loop        -->
-                <p>Įžangoje:</p>
+    <section class="content">
+                Įžangoje:
                 <section id="preview" v-for="detail in articles.exordium">
                 {{detail.author}} - 
                 {{detail.title}}
                 </section>
                 
-                <p>Istorija:</p>
+                Istorija:
                 <section id="preview" v-for="detail in articles.history">
                 {{detail.author}}
                 {{detail.title}}
                 </section>
                 
-                <p>Politika:</p>
+                Politika:
                 <section id="preview" v-for="detail in articles.politics">
                 {{detail.author}}
                 {{detail.title}}
                 </section>
                 
-                <p>Teisė:</p>
+                Teisė:
                 <section id="preview" v-for="detail in articles.law">
                 {{detail.author}}
                 {{detail.title}}
                 </section>
                 
-                <p>Kalba:</p>
+                Kalba:
                 <section id="preview" v-for="detail in articles.language">
                 {{detail.author}}
                 {{detail.title}}
                 </section>
                 
-                <p>Komunikacija:</p>
+                Komunikacija:
                 <section id="preview" v-for="detail in articles.communication">
                 {{detail.author}}
                 {{detail.title}}
                 </section>
                 
-                <p>Recenzijos ir vertinimai:</p>
+                Recenzijos ir vertinimai:
                 <section id="preview" v-for="detail in articles.reviews">
                 {{detail.author}}
                 {{detail.title}}
                 </section>
                 
-                <p>Komentarai:</p>
+                Komentarai:
                 <section id="preview" v-for="detail in articles.comments">
                 {{detail.author}}
                 {{detail.title}}
                 </section>
                 
-                <p>Bibliografija:</p>
+                Bibliografija:
                 <section id="preview" v-for="detail in articles.bibliography">
                 {{detail.author}}
                 {{detail.title}}
                 </section>
                 
-                <p>Įvykių kalendorius:</p>
+                Įvykių kalendorius:
                 <section id="preview" v-for="detail in articles.calender">
                 {{detail.author}}
                 {{detail.title}}
                 </section>
                 
-                <p>Informacinės technologijos:</p>
+                Informacinės technologijos:
                 <section id="preview" v-for="detail in articles.it">
                 {{detail.author}}
                 {{detail.title}}
                 </section>
-</div>
+        </section>
+</section>
 
 
 
@@ -374,7 +381,7 @@
 <script>
     
     
-const app = new Vue({
+var app = new Vue({
     el: "#app",
     data: {
         articles: {

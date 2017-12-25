@@ -6,6 +6,7 @@
     <?php ?>
     <link rel="stylesheet" href="/parlamento-studijos/css/mainpage.css">
     <link rel="stylesheet" href="/parlamento-studijos/node_modules/normalize.css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=News+Cycle|Open+Sans:300" rel="stylesheet">
 </head>
 
 <body>
@@ -25,10 +26,10 @@
             <a href="/parlamento-studijos/loginpage.php"> Login </a>
           </li>
           <li class="button selected">
-            <a href="#"> Option 4 </a>
+            <a href="#"> Turinys </a>
           </li>
           <li class="button">
-            <a href="#"> Option 5 </a>
+            <a href="#"> Redakcija </a>
           </li>
         </ul>
     </nav>

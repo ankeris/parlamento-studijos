@@ -36,5 +36,6 @@ $publications = $sth->fetchAll();
 
 <section>
     <h3>Apie žurnalą</h3>
+    <p>Nuo pat Kovo 11-osios, kai buvo paskelbta apie atkuriamą Lietuvos Respubliką, labiausiai jutome politinių įžvalgų trūkumą: kaip atskleisti demokratinio, parlamentinio valdymo esmę piliečiams, kaip subrandinti politinės kultūros tradiciją, kad parlamentinėje valstybėje ji taptų puikiai suprantama sąvoka. Net didžiuodamiesi Vasario 16-osios Aktu ir trispalve, primiršdavome 1918 metais Lietuvos Tarybos pasirašyto nutarimo turinį: jame yra nurodyta perspektyva – valstybės santvarką bei santykius su užsieniu turėsiąs nustatyti parlamentas. Nors nenuostabu, kad 1920 metais gegužės 15-ąją susirinkusio Steigiamojo Seimo diena tapo valstybės švente ir buvo minima kaip išskirtinė diena Lietuvos Respublikoje kasmet iki 1926 metų.</p>
 </section>
 </main>
