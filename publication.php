@@ -10,16 +10,34 @@ $publications = $sth->fetchAll();
 
 ?>
 
+<h2>
+Žurnalas nr.
+<?php 
+foreach ($publications as $publication){
+    echo $publication['publication'];
+    break;
+}
+?>
 
+</h2>
+
+<table>
+  <tr>
+    <th>Autorius</th>
+    <th>Turinys</th>
+    <th>Pavadinimas</th>
+  </tr>
+  
 <?php 
 foreach ($publications as $publication){
 ?>
-
-<h4><?php echo $publication['topic']?>:</h4>
-
-<h4><?php echo $publication['author']?></h4>
-
-<h4><a href="media/pdfs/<?php echo $publication['pdf_url']?>"><?php echo $publication['name']?></a></h4>
-
-
+  <tr>
+    <td><?php echo $publication['author']?></td>
+    <td><?php echo $publication['topic']?></td>
+    <td><a href="media/pdfs/<?php echo $publication['pdf_url']?>"><?php echo $publication['name']?></a></td>
+  </tr>
 <?php } ?>
+</table>
+
+
+

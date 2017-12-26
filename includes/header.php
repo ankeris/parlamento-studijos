@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<h1 style="width: 100%; text-align:center; margin: 2%;">Parlamento studijos</h1>
+<h1 style="width: 96%; text-align:center; margin: 2%;">Parlamento studijos</h1>
 
 
 <main>
